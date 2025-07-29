@@ -1,0 +1,57 @@
+html {
+    background-color: teal;
+    text-align: center;
+}
+
+#container {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    border: thin solid silver;
+    justify-self: center;
+    border-radius: 25px;
+}
+
+.display {
+    /* border: thin solid pink; */
+    height: 75px;
+}
+
+.number-grid {
+    /* border: thin solid cyan; */
+    width: 75%;
+    display: flex;
+    flex-direction:column-reverse;
+}
+
+.operation-column {
+    /* border: thin solid blue; */
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container {
+    /* border: thin solid orange; */
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.enter-button {
+    /* border: thin solid pink; */
+    height: 50px;
+}
+
+.circle {
+    border: thin solid silver;
+    width: 100%;
+    border-radius: 100px;
+    margin: 5px;
+    align-content: center;
+}
+
+.row {
+    display: flex;
+    height:300px
+}
