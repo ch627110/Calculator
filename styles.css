@@ -1,42 +1,102 @@
 html {
-    background-color: grey;
+    background-color: black;
     text-align: center;
-    color:silver;
+    color:grey;
 }
 
-.display {
-    border: thin solid silver;
+#container {
+    margin-top: 25px;
     display: flex;
+    flex-direction: column;
+    height: auto;
     width: 300px;
-    height: 75px;
-    border-radius: 25px;
-    /* background-color: darkolivegreen; */
-}
-
-.container {
-    margin-top: 100px;
-    border: thin solid silver;
-    display: flex;
-    width: 300px;
-    flex-wrap: wrap;
     justify-self: center;
-    height: 450px;
-    row-gap: 10px;
-    justify-content: space-around;
+    justify-content: space-between;
     border-radius: 25px;
+    padding: 10px;
+    background-color: maroon;
 }
 
-.container > button {
-    border: thin solid silver;
+#top {
+    border: 3px solid black;
+
+    display: flex;
+    width: auto;
+    height: 55px;
+    border-radius: 25px;
+
+    background-color: grey;
+}
+
+#middle {
+    /* border: thin solid blue; */
+    height: 100px;
+
+    display: flex;
+
+    height: auto;
+
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+#numbers {
+    /* border: thin solid orange; */
+
+    display: flex;
+    flex: 75%;
+    flex-direction: column;
+    height: auto;
+}
+
+#one-nine {
+    /* border: thin solid purple; */
+    flex: 75%;
+}
+
+#zero {
+   /* border: thin solid aquamarine; */
+   flex: 25%;
+}
+
+#operators {
+    /* border: thin solid yellow; */
+
+    display: flex;
+    flex: 25%;
+
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+}
+
+#operators > button {
+    background-color: grey;
+    font-weight: bold;
+    color: maroon;
+}
+
+#bottom {
+    /* border: thin solid green; */
+    height: auto;
+}
+
+button {
+    /* border: c solid silver; */
     width: 70px;
     border-radius: 25px;
     text-align: center;
     background-color: transparent;
-    color: silver;
+    height: 50px;
+    margin: 2px;
+    color: grey;
 }
 
-#equal-button {
+#bottom > #equal {
     width: 300px;
-    margin-top: 5px;
     border-radius: 25px;
+    margin: 0px;
+    background-color:grey;
+    font-weight: bold;
+    color: maroon
 }
