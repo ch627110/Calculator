@@ -2,6 +2,7 @@ html {
     background-color: black;
     text-align: center;
     color:grey;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #container {
@@ -26,6 +27,14 @@ html {
     border-radius: 25px;
 
     background-color: grey;
+
+    color:maroon;
+
+
+    justify-content: end;
+    align-items: center;
+    font-size: 25px;
+    padding: 10px;
 }
 
 #middle {
