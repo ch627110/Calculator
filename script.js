@@ -110,15 +110,21 @@ function buttonClick(button) {
         button.textContent == '—' || 
         button.textContent == '×' ||
         button.textContent == '/') {
-            if(number1 != '' && number2 != '') {
+            if(number1 != '' && number2 != '') { // 2nd operator entered
                 number1 = operate()
-                display.textContent = number1
                 number2 = ''
                 currNumber = 2
-            } else {
+                display.textContent = number1
+                operator = button.textContent
+            } else if(button.textContent == operator) {
                 switchCurrNumber()
+                operator = ''
+            } else if(operator == '') {
+                switchCurrNumber()
+                operator = button.textContent
+            } else {
+                operator = button.textContent
             }
-            operator = button.textContent
     } else if(button.textContent == 'C') {
         display.textContent = 0
         clearEverything()
@@ -136,14 +142,6 @@ function insertNumber(num, currNumber) {
         number1 += num
     } else {
         number2 += num
-    }
-}
-
-function populateDisplay(button) {
-    if(display.textContent == 0 || display.textContent == '') {
-        display.textContent = button.textContent
-    } else {
-        display.textContent = button.textContent
     }
 }
 
