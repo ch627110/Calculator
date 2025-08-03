@@ -2,7 +2,8 @@ html {
     background-color: black;
     text-align: center;
     color:grey;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #container {
@@ -30,7 +31,6 @@ html {
 
     color:maroon;
 
-
     justify-content: end;
     align-items: center;
     font-size: 25px;
@@ -38,11 +38,8 @@ html {
 }
 
 #middle {
-    /* border: thin solid blue; */
-    height: 100px;
-
     display: flex;
-
+    
     height: auto;
 
     margin-top: 35px;
@@ -50,32 +47,28 @@ html {
 }
 
 #numbers {
-    /* border: thin solid orange; */
-
     display: flex;
     flex: 75%;
     flex-direction: column;
+    
     height: auto;
 }
 
 #one-nine {
-    /* border: thin solid purple; */
     flex: 75%;
 }
 
 #zero {
-   /* border: thin solid aquamarine; */
    flex: 25%;
 }
 
 #operators {
-    /* border: thin solid yellow; */
-
     display: flex;
     flex: 25%;
-
     flex-direction: column;
+    
     height: auto;
+    
     justify-content: space-around;
 }
 
@@ -86,12 +79,10 @@ html {
 }
 
 #bottom {
-    /* border: thin solid green; */
     height: auto;
 }
 
 button {
-    /* border: c solid silver; */
     width: 70px;
     border-radius: 25px;
     text-align: center;

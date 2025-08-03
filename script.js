@@ -12,34 +12,42 @@ function divide(dividend, divisor) {
     return dividend / divisor
 }
 // variables for each part of an operation
+let number1 = ''
+let number2 = ''
 let operator = ''
-let number1 = 0
-let number2 = 0
+let currNumber = 1
+let reset = 0;
 // function that takes variable and calls functions
-function operate(operator, number1, number2) {
-    if(operator == 'add') {
-        return add(number1, number2)
-    } else if(operator == 'subtract') {
-        return subtract(number1, number2)
-    } else if(operator == 'multiply') {
-        return multiply(number1, number2)
+function operate() {    
+    const num1 = parseInt(number1)
+    const num2 = parseInt(number2)
+    const oper = operator
+
+    if(oper == '+') {
+        return add(num1, num2)
+    } else if(oper == '—') {
+        return subtract(num1, num2)
+    } else if(oper == '×') {
+        return multiply(num1, num2)
     } else {
-        return divide(number1, number2)
+        if(num2 == 0) {
+            return 'Divide by 0 error.'
+        }
+        return divide(num1, num2)
     }
 }
 
 const container = document.getElementById('container')
+const display = document.getElementById('top')
+display.textContent = 0
 
 const numberGrid = document.getElementById('one-nine')
 for(let i = 1; i <= 9; i++) {
     const button = document.createElement('button')
-    
     button.textContent = i;
-    
     button.addEventListener('click', () => {
-        console.log(button.textContent)
+        buttonClick(button);
     });
-
     numberGrid.appendChild(button)
 }
 
@@ -75,20 +83,74 @@ for(let i = 13; i < 17; i++) {
         buttonClick(button)
     });
     operators.appendChild(button)
+    document.getElementById('equal').addEventListener('click', () => {
+        display.textContent = operate()
+        reset = 1
+    })
 }
 
 function buttonClick(button) {
-    if(button.textContent == '+') {
+    if(reset) {
+        display.textContent = ''
+        reset = 0
+    }
+    if(button.textContent != '+' &&
+        button.textContent != '—' && 
+        button.textContent != '×' && 
+        button.textContent != '/' &&
+        button.textContent != 'C' && 
+        button.textContent != '=') {
+            insertNumber(button.textContent, currNumber)
+            if(currNumber == 1) {
+                display.textContent = number1
+            } else {
+                display.textContent = number2
+            }
+    } else if(button.textContent == '+' ||
+        button.textContent == '—' || 
+        button.textContent == '×' ||
+        button.textContent == '/') {
+            if(number1 != '' && number2 != '') {
+                number1 = operate()
+                display.textContent = number1
+                number2 = ''
+                currNumber = 2
+            } else {
+                switchCurrNumber()
+            }
+            operator = button.textContent
+    } else if(button.textContent == 'C') {
+        display.textContent = 0
+        clearEverything()
+    }
+}
 
-    } else if(button.textContent == '—') {
-        
-    } else if(button.textContent == '×') {
-        
-    } else if(button.textContent == '/') {
-        
-    } else if(button.textContent == '=') {
-        
+function clearEverything() {
+    operator = ''
+    number1 = ''
+    number2 = ''
+}
+
+function insertNumber(num, currNumber) {
+    if(currNumber == 1) {
+        number1 += num
     } else {
+        number2 += num
+    }
+}
 
+function populateDisplay(button) {
+    if(display.textContent == 0 || display.textContent == '') {
+        display.textContent = button.textContent
+    } else {
+        display.textContent = button.textContent
+    }
+}
+
+function switchCurrNumber() {
+    if(currNumber == 1) {
+        currNumber = 2
+    } else {
+        currNumber = 1
     }
 }
